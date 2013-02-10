@@ -37,9 +37,6 @@ function init() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 
   document.body.appendChild( renderer.domElement );
-
-  // Launch fullscreen for browsers that support it!
-  launchFullScreen(renderer.domElement);
 }
 
 function animate() {
@@ -54,15 +51,4 @@ function animate() {
 
   renderer.render( scene, camera );
 
-}
-
-function plane(width, height) {
-
-	return function(u, v) {
-		var x = (u-0.5) * width;
-		var y = (v+0.5) * height;
-		var z = 0;
-
-		return new THREE.Vector3(x, y, z);
-	};
 }
